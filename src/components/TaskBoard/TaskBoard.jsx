@@ -18,7 +18,7 @@ const TaskBoard = () => {
   const [showAddModal, setShowAddModal] = useState(false);
   const [taskToUpdate, setTaskToUpdate] = useState();
 
-  function handleAddTask(newTask, isAdd) {
+  function handleAddEditTask(newTask, isAdd) {
     if (isAdd) {
       setTasks([...tasks, newTask]);
     } else {
@@ -40,12 +40,18 @@ const TaskBoard = () => {
     setShowAddModal(true);
   }
 
+  function handleCloseClick() {
+    setShowAddModal(false);
+    setTaskToUpdate(null);
+  }
+
   return (
     <section className="mb-20" id="tasks">
       {showAddModal && (
         <AddTaskModal
           taskToUpdate={taskToUpdate}
-          onSave={handleAddTask}
+          onSave={handleAddEditTask}
+          onCloseClick={handleCloseClick}
         ></AddTaskModal>
       )}
       <div className="container">

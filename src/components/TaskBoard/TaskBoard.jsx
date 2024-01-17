@@ -33,8 +33,9 @@ const TaskBoard = () => {
       );
     }
 
-    setShowAddModal(false);
+    handleCloseClick();
   }
+  console.log(tasks);
 
   function handleEditTask(task) {
     setTaskToUpdate(task);

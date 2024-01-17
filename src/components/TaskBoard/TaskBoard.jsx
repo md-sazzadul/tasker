@@ -6,7 +6,7 @@ import TaskList from "./TaskList";
 const TaskBoard = () => {
   const defaultTask = {
     id: crypto.randomUUID(),
-    title: "Learn React",
+    title: "Learn React Native",
     description:
       "I want to Learn React such that I can treat it like my slave and make it do whatever I want to do.",
     tags: ["web", "react", "js"],
